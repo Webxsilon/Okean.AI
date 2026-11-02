@@ -1,201 +1,132 @@
-Apache License
-                           Version 2.0, January 2004
-                        http://www.apache.org/licenses/
+# Okean.AI
 
-   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+**Okean.AI** is an open-source project designed to provide an immersive AI role-playing experience. It gives users extensive control over AI models, characters, personas, and various aspects of their conversations.
 
-   1. Definitions.
+## Features
 
-      "License" shall mean the terms and conditions for use, reproduction,
-      and distribution as defined by Sections 1 through 9 of this document.
+1. Local AI and online API support.
+2. Character creation and management.
+3. Offline conversations.
+4. Custom personas.
+5. Quick Markdown buttons and shortcuts.
+6. User-friendly LLM settings.
+7. Character sharing through a dedicated file format (`.axp` — Advanced eXchange Package).
+8. Support for Ollama and llama.cpp engines.
+9. Background music for a more immersive role-playing experience.
 
-      "Licensor" shall mean the copyright owner or entity authorized by
-      the copyright owner that is granting the License.
+## Requirements
 
-      "Legal Entity" shall mean the union of the acting entity and all
-      other entities that control, are controlled by, or are under common
-      control with that entity. For the purposes of this definition,
-      "control" means (i) the power, direct or indirect, to cause the
-      direction or management of such entity, whether by contract or
-      otherwise, or (ii) ownership of fifty percent (50%) or more of the
-      outstanding shares, or (iii) beneficial ownership of such entity.
+### General Requirements
 
-      "You" (or "Your") shall mean an individual or Legal Entity
-      exercising permissions granted by this License.
+- Windows 10 / Windows 11.
+- At least 8 GB of system RAM (16 GB recommended).
+- A 4-core / 8-thread processor or better is recommended.
+- At least 2 GB of free disk space for the application itself. Additional space is required for AI models.
 
-      "Source" form shall mean the preferred form for making modifications,
-      including but not limited to software source code, documentation
-      source, and configuration files.
+### Local AI Requirements
 
-      "Object" form shall mean any form resulting from mechanical
-      transformation or translation of a Source form, including but
-      not limited to compiled object code, generated documentation,
-      and conversions to other media types.
+Hardware requirements depend on the selected model, its size, quantization, and context length.
 
-      "Work" shall mean the work of authorship, whether in Source or
-      Object form, made available under the License, as indicated by a
-      copyright notice that is included in or attached to the work
-      (an example is provided in the Appendix below).
+- GPU acceleration is recommended but not mandatory.
+- 4–6 GB VRAM can be sufficient for smaller models.
+- 8–12 GB VRAM or more is recommended for larger models.
+- CPU-only inference is also possible, although generation may be significantly slower.
 
-      "Derivative Works" shall mean any work, whether in Source or Object
-      form, that is based on (or derived from) the Work and for which the
-      editorial revisions, annotations, elaborations, or other modifications
-      represent, as a whole, an original work of authorship. For the purposes
-      of this License, Derivative Works shall not include works that remain
-      separable from, or merely link (or bind by name) to the interfaces of,
-      the Work and Derivative Works thereof.
+**Note:** Online API providers have their own requirements and generally do not require a powerful local GPU.
 
-      "Contribution" shall mean any work of authorship, including
-      the original version of the Work and any modifications or additions
-      to that Work or Derivative Works thereof, that is intentionally
-      submitted to Licensor for inclusion in the Work by the copyright owner
-      or by an individual or Legal Entity authorized to submit on behalf of
-      the copyright owner. For the purposes of this definition, "submitted"
-      means any form of electronic, verbal, or written communication sent
-      to the Licensor or its representatives, including but not limited to
-      communication on electronic mailing lists, source code control systems,
-      and issue tracking systems that are managed by, or on behalf of, the
-      Licensor for the purpose of discussing and improving the Work, but
-      excluding communication that is conspicuously marked or otherwise
-      designated in writing by the copyright owner as "Not a Contribution."
+## Installation
 
-      "Contributor" shall mean Licensor and any individual or Legal Entity
-      on behalf of whom a Contribution has been received by Licensor and
-      subsequently incorporated within the Work.
+### Prebuilt Version
 
-   2. Grant of Copyright License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      copyright license to reproduce, prepare Derivative Works of,
-      publicly display, publicly perform, sublicense, and distribute the
-      Work and such Derivative Works in Source or Object form.
+1. Open the [Releases](../../releases) page.
+2. Download the latest available release.
+3. Extract the downloaded archive into an empty folder.
+4. Make sure all application files and folders remain together.
+5. Run `Okean.AI.exe`.
 
-   3. Grant of Patent License. Subject to the terms and conditions of
-      this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
-      (except as stated in this section) patent license to make, have made,
-      use, offer to sell, sell, import, and otherwise transfer the Work,
-      where such license applies only to those patent claims licensable
-      by such Contributor that are necessarily infringed by their
-      Contribution(s) alone or by combination of their Contribution(s)
-      with the Work to which such Contribution(s) was submitted. If You
-      institute patent litigation against any entity (including a
-      cross-claim or counterclaim in a lawsuit) alleging that the Work
-      or a Contribution incorporated within the Work constitutes direct
-      or contributory patent infringement, then any patent licenses
-      granted to You under this License for that Work shall terminate
-      as of the date such litigation is filed.
+You can also create a desktop shortcut for easier access.
 
-   4. Redistribution. You may reproduce and distribute copies of the
-      Work or Derivative Works thereof in any medium, with or without
-      modifications, and in Source or Object form, provided that You
-      meet the following conditions:
+### Source Code
 
-      (a) You must give any other recipients of the Work or
-          Derivative Works a copy of this License; and
+1. Click the green **Code** button.
+2. Select **Download ZIP**.
+3. Extract the archive into an empty folder.
+4. Follow the development and build instructions if you intend to run or modify the source code.
 
-      (b) You must cause any modified files to carry prominent notices
-          stating that You changed the files; and
+## Usage
 
-      (c) You must retain, in the Source form of any Derivative Works
-          that You distribute, all copyright, patent, trademark, and
-          attribution notices from the Source form of the Work,
-          excluding those notices that do not pertain to any part of
-          the Derivative Works; and
+After installation, launch `Okean.AI.exe` and wait for the application to initialize.
 
-      (d) If the Work includes a "NOTICE" text file as part of its
-          distribution, then any Derivative Works that You distribute must
-          include a readable copy of the attribution notices contained
-          within such NOTICE file, excluding those notices that do not
-          pertain to any part of the Derivative Works, in at least one
-          of the following places: within a NOTICE text file distributed
-          as part of the Derivative Works; within the Source form or
-          documentation, if provided along with the Derivative Works; or,
-          within a display generated by the Derivative Works, if and
-          wherever such third-party notices normally appear. The contents
-          of the NOTICE file are for informational purposes only and
-          do not modify the License. You may add Your own attribution
-          notices within Derivative Works that You distribute, alongside
-          or as an addendum to the NOTICE text from the Work, provided
-          that such additional attribution notices cannot be construed
-          as modifying the License.
+Depending on your preferred AI backend, you may need to install Ollama, configure llama.cpp, or provide an API key.
 
-      You may add Your own copyright statement to Your modifications and
-      may provide additional or different license terms and conditions
-      for use, reproduction, or distribution of Your modifications, or
-      for any such Derivative Works as a whole, provided Your use,
-      reproduction, and distribution of the Work otherwise complies with
-      the conditions stated in this License.
+## Project Structure
 
-   5. Submission of Contributions. Unless You explicitly state otherwise,
-      any Contribution intentionally submitted for inclusion in the Work
-      by You to the Licensor shall be under the terms and conditions of
-      this License, without any additional terms or conditions.
-      Notwithstanding the above, nothing herein shall supersede or modify
-      the terms of any separate license agreement you may have executed
-      with Licensor regarding such Contributions.
+| Directory | Description |
+|---|---|
+| `Character/` | Stores character information and profiles. Do not delete this folder unless you intend to remove its contents. |
+| `data/` | Stores conversation history and application data. |
+| `llamacpp/` | Contains the llama.cpp backend installation (optional). |
+| `models/` | Stores local `.gguf` models used by llama.cpp. |
+| `personas/` | Stores custom user personas. |
+| `resources/music/` | Stores user-provided music for background playlists. |
 
-   6. Trademarks. This License does not grant permission to use the trade
-      names, trademarks, service marks, or product names of the Licensor,
-      except as required for reasonable and customary use in describing the
-      origin of the Work and reproducing the content of the NOTICE file.
+**Note:** Some directories may be created automatically when the application starts or when specific features are used.
 
-   7. Disclaimer of Warranty. Unless required by applicable law or
-      agreed to in writing, Licensor provides the Work (and each
-      Contributor provides its Contributions) on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
-      implied, including, without limitation, any warranties or conditions
-      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
-      PARTICULAR PURPOSE. You are solely responsible for determining the
-      appropriateness of using or redistributing the Work and assume any
-      risks associated with Your exercise of permissions under this License.
+## Troubleshooting
 
-   8. Limitation of Liability. In no event and under no legal theory,
-      whether in tort (including negligence), contract, or otherwise,
-      unless required by applicable law (such as deliberate and grossly
-      negligent acts) or agreed to in writing, shall any Contributor be
-      liable to You for damages, including any direct, indirect, special,
-      incidental, or consequential damages of any character arising as a
-      result of this License or out of the use or inability to use the
-      Work (including but not limited to damages for loss of goodwill,
-      work stoppage, computer failure or malfunction, or any and all
-      other commercial damages or losses), even if such Contributor
-      has been advised of the possibility of such damages.
+### 1. llama.cpp is not running
 
-   9. Accepting Warranty or Additional Liability. While redistributing
-      the Work or Derivative Works thereof, You may choose to offer,
-      and charge a fee for, acceptance of support, warranty, indemnity,
-      or other liability obligations and/or rights consistent with this
-      License. However, in accepting such obligations, You may act only
-      on Your own behalf and on Your sole responsibility, not on behalf
-      of any other Contributor, and only if You agree to indemnify,
-      defend, and hold each Contributor harmless for any liability
-      incurred by, or claims asserted against, such Contributor by reason
-      of your accepting any such warranty or additional liability.
+1. Open Settings.
+2. Navigate to the **Backend** category.
+3. Expand the category.
+4. Find and select **Install llama.cpp**.
 
-   END OF TERMS AND CONDITIONS
+### 2. Ollama is not running
 
-   APPENDIX: How to apply the Apache License to your work.
+This may happen when switching from llama.cpp to Ollama.
 
-      To apply the Apache License to your work, attach the following
-      boilerplate notice, with the fields enclosed by brackets "[]"
-      replaced with your own identifying information. (Don't include
-      the brackets!)  The text should be enclosed in the appropriate
-      comment syntax for the file format. We also recommend that a
-      file or class name and description of purpose be included on the
-      same "printed page" as the copyright notice for easier
-      identification within third-party archives.
+Make sure Ollama is installed and running on your system. If it is not installed, download it from the [official Ollama website](https://ollama.com/).
 
-   Copyright [yyyy] [name of copyright owner]
+### 3. "Pick a model first and install with Ollama if empty"
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+This message may be outdated or may appear when no suitable model is configured.
 
-       http://www.apache.org/licenses/LICENSE-2.0
+**If you are using llama.cpp:**
 
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+1. Open Settings.
+2. Navigate to the recommended models section.
+3. Download one of the suggested models.
+4. Alternatively, find the **Or paste a direct .gguf URL** field.
+5. Paste a direct download link to a compatible `.gguf` model from Hugging Face and click Download.
+
+**If you are using Ollama:**
+
+1. Open Settings.
+2. Navigate to the **AI Settings** category.
+3. Find the **Ollama Pull** field.
+4. Enter the model name you want to download.
+5. Start the download.
+
+**If you are using an online API:**
+
+1. Open the API configuration settings.
+2. Enter your API key.
+3. Select an available model supported by your provider.
+
+For example, you can use a Gemini model if your API provider supports it.
+
+## License
+
+See the [LICENSE](LICENSE) file for licensing information.
+
+## Terms of Service
+
+See the [Terms of Service](TERMS_OF_SERVICE.md) for the conditions of using Okean.AI.
+
+## Privacy Policy
+
+Okean.AI does not collect, store, or transmit personal user data to its own servers. Conversations, characters, and personas are stored locally on your device.
+
+When using third-party AI APIs, data is sent directly to the selected provider and is subject to their respective privacy policies.
+
+See the [Privacy Policy](PRIVACY_POLICY.md) for more information.
