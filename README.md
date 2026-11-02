@@ -1,5 +1,9 @@
 # Okean.AI
 
+[Okean.AI Interface Showcase](https://i.imgur.com/7eiaLFk.png)
+
+
+
 Okean.AI is an open-source AI role-playing application built around **User-First** principles.
 
 It gives users extensive control over AI models, characters, personas, conversations, system prompts, and image generation.
@@ -36,12 +40,16 @@ Image generation is independent of the selected text generation backend.
 
 ### AI Engines
 
+[Showcase](https://i.imgur.com/56voOlC.png)
+
 - Ollama
 - llama.cpp
 
 ## Text Formatting
 
 Okean.AI includes built-in formatting shortcuts to make writing and role-playing more convenient.
+
+[Example image](https://i.imgur.com/ffWAzyz.png)
 
 | Shortcut | Formatting | Purpose |
 |---|---|---|
@@ -232,3 +240,5 @@ See the [LICENSE](LICENSE) file.
 ---
 
 **Okean.AI — Your data. Your choice. Your control.**
+
+[Okean.AI additional screenshot](https://i.imgur.com/e97oyXY.png)
