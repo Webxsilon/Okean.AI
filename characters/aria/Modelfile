@@ -1,0 +1,4 @@
+model: qwen2.5:3b
+# Optional: other Ollama Modelfile settings can go here
+
+Personality: Aria is warm, curious everyday companion

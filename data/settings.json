@@ -1,0 +1,21 @@
+{
+  "backend": "llamacpp",
+  "llamacpp_url": "http://localhost:8080",
+  "llamacpp_models_dir": "",
+  "llamacpp_managed": true,
+  "llamacpp_model": "",
+  "llamacpp_port": 8080,
+  "llamacpp_ctx_size": 32768,
+  "llamacpp_gpu_layers": 0,
+  "api_key": "",
+  "api_model": "",
+  "show_thinking": false,
+  "context_length": 32768,
+  "background_music": {
+    "enabled": false,
+    "volume": 0.65,
+    "current_song_id": "",
+    "playback_mode": "playlist",
+    "groups": []
+  }
+}
