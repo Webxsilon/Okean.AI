@@ -1,21 +1,43 @@
 # Okean.AI
 
-Okean.AI is an open-source AI role-playing application built around **User-First** principles. It gives users extensive control over AI models, characters, personas, conversations, and the overall role-playing experience.
+Okean.AI is an open-source AI role-playing application built around **User-First** principles.
+
+It gives users extensive control over AI models, characters, personas, conversations, system prompts, and image generation.
 
 Our goal is to provide an AI experience focused on user freedom, privacy, customization, and control.
 
 ## Features
 
+### AI & Roleplay
+
 1. **Local AI and Online API Support** — use locally running models or connect to online AI providers using your own API keys.
-2. **Character Creation and Management** — create, customize, import, and manage your own AI characters.
+2. **Character Creation and Management** — create, customize, import, and manage AI characters.
 3. **Offline Conversations** — chat with locally running AI models without requiring an online AI provider.
 4. **Custom Personas** — create and manage personas for your role-playing sessions.
-5. **Text Formatting** — format messages using built-in shortcuts and custom formatting syntax.
-6. **Customizable LLM Settings** — configure various AI generation parameters.
-7. **System Prompt Customization** — edit the system prompt or restore it to its original default version.
-8. **Character Sharing** — export and import characters using the `.axp` (Advanced eXchange Package) file format.
-9. **Multiple AI Engines** — support for Ollama and llama.cpp.
-10. **Background Music** — use background music to enhance your role-playing experience.
+5. **Customizable LLM Settings** — configure AI generation parameters.
+6. **System Prompt Customization** — edit the system prompt or restore its original default version.
+7. **Dynamic System Prompt Tokens** — use supported tokens to automatically insert relevant application information into the system prompt.
+8. **Text Formatting** — format messages using built-in shortcuts and custom formatting syntax.
+9. **Background Music** — use background music to enhance your role-playing experience.
+
+### Image Generation
+
+Okean.AI supports two image generation modes:
+
+- **Cloud Image Generation** — connect supported external image generation APIs and generate images through cloud-based models.
+- **Local Image Generation** — use locally installed image generation models without requiring an external image generation provider.
+
+Image generation is independent of the selected text generation backend.
+
+### Character Sharing
+
+- Export and import characters using the `.axp` file format.
+- `.axp` stands for **Advanced eXchange Package**.
+
+### AI Engines
+
+- Ollama
+- llama.cpp
 
 ## Text Formatting
 
@@ -31,24 +53,46 @@ Okean.AI includes built-in formatting shortcuts to make writing and role-playing
 
 Okean.AI also supports custom formatting syntax:
 
-- `*text*` — italic text.
-- `**text**` — bold text.
-- `***text***` — bold italic text.
-- `"text"` — quotation formatting.
-- `[C(#0400ff)]text[C(#0400ff)]` — colored text.
+| Syntax | Result |
+|---|---|
+| `*text*` | Italic text |
+| `**text**` | Bold text |
+| `***text***` | Bold italic text |
+| `"text"` | Quotation formatting |
+| `[C(#0400ff)]text[C(#0400ff)]` | Colored text |
 
-## AI Customization
+## System Prompt Customization
 
-Okean.AI gives users control over how the AI behaves.
-
-### System Prompt
+Okean.AI provides additional control over AI instructions and behavior.
 
 Users can:
-- View and edit the system prompt.
-- Customize instructions and AI behavior.
-- Restore the system prompt to its original default version whenever needed.
 
-This allows users to customize their role-playing experience without permanently losing the application's original instructions.
+- View and edit the system prompt.
+- Restore the original default system prompt.
+- Use supported dynamic tokens to insert application information automatically.
+- Customize instructions to suit their preferred role-playing style.
+
+Dynamic tokens allow the system prompt to include changing information without requiring users to manually rewrite the entire prompt.
+
+## Image Generation
+
+### Cloud Image Generation
+
+Cloud generation allows users to connect supported external image generation APIs.
+
+Depending on the selected provider, users can configure their API credentials and choose an available image generation model.
+
+Cloud generation requires an internet connection and may involve provider-specific usage fees.
+
+### Local Image Generation
+
+Local generation allows users to run image generation models directly on their own devices.
+
+This option can reduce reliance on external image generation services and keep generation prompts on the local device.
+
+Local image generation requires compatible software, models, and sufficient hardware resources.
+
+Hardware requirements depend on the selected model, resolution, precision, and generation settings.
 
 ## Requirements
 
@@ -69,7 +113,13 @@ Hardware requirements depend on the selected model, its size, quantization, and 
 - CPU-only inference is possible, but generation may be considerably slower.
 - Additional storage is required for downloaded models.
 
-Online API usage has different hardware requirements and does not require the model to run locally.
+### Local Image Generation Requirements
+
+Local image generation has separate hardware requirements from text generation.
+
+A compatible GPU with sufficient VRAM is recommended. Required resources depend heavily on the image generation model and its configuration.
+
+Online API usage does not require local image generation hardware.
 
 ## Installation
 
@@ -102,7 +152,9 @@ After installing or extracting the application:
 3. Install or select an AI model, or configure an online API provider.
 4. Create or import a character.
 5. Create a persona if needed.
-6. Start a conversation!
+6. Customize the system prompt if desired.
+7. Configure image generation if you want to use it.
+8. Start a conversation!
 
 ## Project Structure
 
@@ -134,11 +186,10 @@ Make sure Ollama is installed and running on your system.
 
 If you have just switched from llama.cpp to Ollama, you may need to install or start Ollama separately.
 
-### "Pick a model first and install with Ollama if empty"
-
-This message may appear when no model is available.
+### No AI model is available
 
 **For llama.cpp:**
+
 1. Open Settings.
 2. Find the recommended models section.
 3. Download one of the recommended models.
@@ -146,24 +197,33 @@ This message may appear when no model is available.
 Alternatively, find the **Or paste a direct .gguf URL** field, enter a valid GGUF download URL, and select Download.
 
 **For Ollama:**
+
 1. Open Settings.
 2. Find the **AI Settings** category.
 3. Locate **Ollama Pull**.
 4. Enter the model name and download it.
 
 **For API providers:**
+
 1. Configure your API key.
 2. Select a model available through your chosen provider.
+
+### Image generation is not working
+
+- Check your selected generation backend.
+- For Cloud generation, verify your API key and provider configuration.
+- For Local generation, verify that the required backend and model are installed.
+- Make sure your hardware meets the selected model's requirements.
 
 ## Privacy Policy
 
 Okean.AI is designed around local data storage and user control.
 
-See the [Privacy Policy](PRIVACY_POLICY.md) to learn how Okean.AI handles user data, local storage, and third-party AI services.
+See [POLICY_PRIVACY.md](POLICY_PRIVACY.md) to learn how Okean.AI handles user data, local storage, and third-party services.
 
 ## Terms of Service
 
-See the [Terms of Service](TERMS_OF_SERVICE.md) for the terms and conditions of using Okean.AI.
+See [TERMS_OF_SERVICE.md](TERMS_OF_SERVICE.md) for the terms and conditions of using Okean.AI.
 
 ## License
 
