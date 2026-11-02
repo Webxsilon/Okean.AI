@@ -1,132 +1,174 @@
 # Okean.AI
 
-**Okean.AI** is an open-source project designed to provide an immersive AI role-playing experience. It gives users extensive control over AI models, characters, personas, and various aspects of their conversations.
+Okean.AI is an open-source AI role-playing application built around **User-First** principles. It gives users extensive control over AI models, characters, personas, conversations, and the overall role-playing experience.
+
+Our goal is to provide an AI experience focused on user freedom, privacy, customization, and control.
 
 ## Features
 
-1. Local AI and online API support.
-2. Character creation and management.
-3. Offline conversations.
-4. Custom personas.
-5. Quick Markdown buttons and shortcuts.
-6. User-friendly LLM settings.
-7. Character sharing through a dedicated file format (`.axp` — Advanced eXchange Package).
-8. Support for Ollama and llama.cpp engines.
-9. Background music for a more immersive role-playing experience.
+1. **Local AI and Online API Support** — use locally running models or connect to online AI providers using your own API keys.
+2. **Character Creation and Management** — create, customize, import, and manage your own AI characters.
+3. **Offline Conversations** — chat with locally running AI models without requiring an online AI provider.
+4. **Custom Personas** — create and manage personas for your role-playing sessions.
+5. **Text Formatting** — format messages using built-in shortcuts and custom formatting syntax.
+6. **Customizable LLM Settings** — configure various AI generation parameters.
+7. **System Prompt Customization** — edit the system prompt or restore it to its original default version.
+8. **Character Sharing** — export and import characters using the `.axp` (Advanced eXchange Package) file format.
+9. **Multiple AI Engines** — support for Ollama and llama.cpp.
+10. **Background Music** — use background music to enhance your role-playing experience.
+
+## Text Formatting
+
+Okean.AI includes built-in formatting shortcuts to make writing and role-playing more convenient.
+
+| Shortcut | Formatting | Purpose |
+|---|---|---|
+| `Ctrl + *` | *Italic* | Actions, thoughts, and descriptions |
+| `Ctrl + B` | **Bold** | Emphasis and important details |
+| `Ctrl + I` | ***Bold Italic*** | Strong emphasis |
+| `Ctrl + Q` | Quotation | Dialogue and quoted text |
+| `Ctrl + H` | Text Color (Hue) | Custom text colors |
+
+Okean.AI also supports custom formatting syntax:
+
+- `*text*` — italic text.
+- `**text**` — bold text.
+- `***text***` — bold italic text.
+- `"text"` — quotation formatting.
+- `[C(#0400ff)]text[C(#0400ff)]` — colored text.
+
+## AI Customization
+
+Okean.AI gives users control over how the AI behaves.
+
+### System Prompt
+
+Users can:
+- View and edit the system prompt.
+- Customize instructions and AI behavior.
+- Restore the system prompt to its original default version whenever needed.
+
+This allows users to customize their role-playing experience without permanently losing the application's original instructions.
 
 ## Requirements
 
 ### General Requirements
 
-- Windows 10 / Windows 11.
+- Windows 10 or Windows 11.
 - At least 8 GB of system RAM (16 GB recommended).
-- A 4-core / 8-thread processor or better is recommended.
-- At least 2 GB of free disk space for the application itself. Additional space is required for AI models.
+- A reasonably modern multi-core CPU.
+- SSD storage recommended.
 
 ### Local AI Requirements
 
 Hardware requirements depend on the selected model, its size, quantization, and context length.
 
-- GPU acceleration is recommended but not mandatory.
-- 4–6 GB VRAM can be sufficient for smaller models.
-- 8–12 GB VRAM or more is recommended for larger models.
-- CPU-only inference is also possible, although generation may be significantly slower.
+- A dedicated GPU is recommended but not mandatory.
+- 6–8 GB of VRAM can be sufficient for smaller models.
+- 12 GB or more of VRAM is recommended for larger models.
+- CPU-only inference is possible, but generation may be considerably slower.
+- Additional storage is required for downloaded models.
 
-**Note:** Online API providers have their own requirements and generally do not require a powerful local GPU.
+Online API usage has different hardware requirements and does not require the model to run locally.
 
 ## Installation
 
-### Prebuilt Version
+### Downloading the Application
 
-1. Open the [Releases](../../releases) page.
-2. Download the latest available release.
-3. Extract the downloaded archive into an empty folder.
-4. Make sure all application files and folders remain together.
+1. Open the project's GitHub repository.
+2. Navigate to the **Releases** section.
+3. Download the latest available release.
+4. Extract the downloaded archive into a folder of your choice.
 5. Run `Okean.AI.exe`.
+6. Wait for the application to initialize.
 
-You can also create a desktop shortcut for easier access.
+Keep the application's files and folders together. Do not move or delete individual application files unless you know what they are used for.
 
-### Source Code
+### Downloading the Source Code
 
-1. Click the green **Code** button.
-2. Select **Download ZIP**.
-3. Extract the archive into an empty folder.
-4. Follow the development and build instructions if you intend to run or modify the source code.
+1. Open the repository.
+2. Click the green **Code** button.
+3. Select **Download ZIP**.
+4. Extract the archive.
+
+Additional build instructions may be required to compile the application from source.
 
 ## Usage
 
-After installation, launch `Okean.AI.exe` and wait for the application to initialize.
+After installing or extracting the application:
 
-Depending on your preferred AI backend, you may need to install Ollama, configure llama.cpp, or provide an API key.
+1. Launch `Okean.AI.exe`.
+2. Select your preferred AI engine.
+3. Install or select an AI model, or configure an online API provider.
+4. Create or import a character.
+5. Create a persona if needed.
+6. Start a conversation!
 
 ## Project Structure
 
-| Directory | Description |
+| Folder | Description |
 |---|---|
-| `Character/` | Stores character information and profiles. Do not delete this folder unless you intend to remove its contents. |
+| `Character/` | Stores character information and character files. |
 | `data/` | Stores conversation history and application data. |
-| `llamacpp/` | Contains the llama.cpp backend installation (optional). |
-| `models/` | Stores local `.gguf` models used by llama.cpp. |
-| `personas/` | Stores custom user personas. |
-| `resources/music/` | Stores user-provided music for background playlists. |
+| `llamacpp/` | Intended for the llama.cpp backend installation. |
+| `models/` | Stores GGUF models used by llama.cpp. |
+| `personas/` | Stores custom personas. |
+| `resources/music/` | Stores user-provided background music. |
 
-**Note:** Some directories may be created automatically when the application starts or when specific features are used.
+Some folders may be populated automatically when the application is used or when additional components are installed.
+
+Do not delete folders containing user data unless you intend to remove that data.
 
 ## Troubleshooting
 
-### 1. llama.cpp is not running
+### llama.cpp is not running
 
 1. Open Settings.
-2. Navigate to the **Backend** category.
-3. Expand the category.
-4. Find and select **Install llama.cpp**.
+2. Find the **Backend** category.
+3. Expand it.
+4. Select **Install llama.cpp**.
 
-### 2. Ollama is not running
+### Ollama is not running
 
-This may happen when switching from llama.cpp to Ollama.
+Make sure Ollama is installed and running on your system.
 
-Make sure Ollama is installed and running on your system. If it is not installed, download it from the [official Ollama website](https://ollama.com/).
+If you have just switched from llama.cpp to Ollama, you may need to install or start Ollama separately.
 
-### 3. "Pick a model first and install with Ollama if empty"
+### "Pick a model first and install with Ollama if empty"
 
-This message may be outdated or may appear when no suitable model is configured.
+This message may appear when no model is available.
 
-**If you are using llama.cpp:**
-
+**For llama.cpp:**
 1. Open Settings.
-2. Navigate to the recommended models section.
-3. Download one of the suggested models.
-4. Alternatively, find the **Or paste a direct .gguf URL** field.
-5. Paste a direct download link to a compatible `.gguf` model from Hugging Face and click Download.
+2. Find the recommended models section.
+3. Download one of the recommended models.
 
-**If you are using Ollama:**
+Alternatively, find the **Or paste a direct .gguf URL** field, enter a valid GGUF download URL, and select Download.
 
+**For Ollama:**
 1. Open Settings.
-2. Navigate to the **AI Settings** category.
-3. Find the **Ollama Pull** field.
-4. Enter the model name you want to download.
-5. Start the download.
+2. Find the **AI Settings** category.
+3. Locate **Ollama Pull**.
+4. Enter the model name and download it.
 
-**If you are using an online API:**
-
-1. Open the API configuration settings.
-2. Enter your API key.
-3. Select an available model supported by your provider.
-
-For example, you can use a Gemini model if your API provider supports it.
-
-## License
-
-See the [LICENSE](LICENSE) file for licensing information.
-
-## Terms of Service
-
-See the [Terms of Service](TERMS_OF_SERVICE.md) for the conditions of using Okean.AI.
+**For API providers:**
+1. Configure your API key.
+2. Select a model available through your chosen provider.
 
 ## Privacy Policy
 
-Okean.AI does not collect, store, or transmit personal user data to its own servers. Conversations, characters, and personas are stored locally on your device.
+Okean.AI is designed around local data storage and user control.
 
-When using third-party AI APIs, data is sent directly to the selected provider and is subject to their respective privacy policies.
+See the [Privacy Policy](PRIVACY_POLICY.md) to learn how Okean.AI handles user data, local storage, and third-party AI services.
 
-See the [Privacy Policy](PRIVACY_POLICY.md) for more information.
+## Terms of Service
+
+See the [Terms of Service](TERMS_OF_SERVICE.md) for the terms and conditions of using Okean.AI.
+
+## License
+
+See the [LICENSE](LICENSE) file.
+
+---
+
+**Okean.AI — Your data. Your choice. Your control.**
